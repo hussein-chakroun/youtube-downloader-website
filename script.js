@@ -3,14 +3,14 @@ let URLinput = document.querySelector('.URL-input');
 let select = document.querySelector('.opt');
 let serverURL = 'http://localhost:4000';
 
-Btn.addEventListener('click', () => {
+Btn.addEventListener('click', async () => {
 	if (!URLinput.value) {
 		alert('Enter YouTube URL');
 	} else {
 		if (select.value == 'mp3') {
-			downloadMp3(URLinput.value);
+			await downloadMp3(URLinput.value);
 		} else if (select.value == 'mp4') {
-			downloadMp4(URLinput.value);
+			await downloadMp4(URLinput.value);
 		}
 	}
 });
